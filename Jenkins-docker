@@ -28,7 +28,7 @@ pipeline{
                             file: "target/myweb-8.2.0.war", 
                             type: 'war'
                        ]
-                  ], 
+                  ]
                   credentialsId: 'nexus3', 
                   groupId: 'in.javahome', 
                   nexusUrl: '172.31.18.88:8081', 
