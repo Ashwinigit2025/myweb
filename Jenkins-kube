@@ -40,7 +40,7 @@ pipeline{
             }
         stage('Build Docker Image'){
             steps{
-                 sh 'docker build -t ashwini323/spring-boot-mongo .'
+                 sh 'docker build -t ashwini323 .'
              }
          }
         stage('Push Docker Image'){
@@ -48,7 +48,7 @@ pipeline{
                   withCredentials([string(credentialsId: 'DOCKER_HUB_CREDENTIALS', variable: 'DOCKER_HUB_CREDENTIALS')]) {
                       sh "docker login -u ashwini323 -p ${DOCKER_HUB_CREDENTIALS}"
             }
-            sh 'docker push ashwini323/spring-boot-mongo'
+            sh 'docker push ashwini323'
         }
       }
         stage("Deploy To Kuberates Cluster"){
